@@ -1,6 +1,6 @@
 ### Date created
-Project created date: 7th February 2021
-Last updated: 8th February 2021
+**Project created date:** 7th February 2021
+**Last updated:** 8th February 2021
 
 ### Project Title
 Git/Github Udacity Bikeshare Project
