@@ -7,6 +7,7 @@
 
 
 """
+
 import time
 import pandas as pd
 import numpy as np
@@ -125,9 +126,7 @@ def load_data(city, month, day):
 
         # filter by month if applicable
         if month != 'all':
-            # use the index of the months list to get the corresponding int
             months = ['january', 'february', 'march', 'april', 'may', 'june']
-
             # filter by month to create the new dataframe
             df = df[df['month'] == month.title()]
 
@@ -190,10 +189,8 @@ def station_stats(df):
     start_time = time.time()
 
     if df_validate(df.columns, 'Start Station') != 'Error' and df_validate(df.columns, 'End Station') != 'Error':
-        # display most commonly used start station
         print("\nThe most commonly used start station is:{}" .format(df['Start Station'].mode()[0]))
 
-        # display most commonly used end station
         print("\nThe most commonly used end station is:{}" .format(df['End Station'].mode()[0]))
 
         # create a new value in dataframe with start/end combo
@@ -225,10 +222,8 @@ def trip_duration_stats(df):
         # Calculating months - flat 30 days per month
         months = int((total_travel_time % 365) // 30)
 
-        # Calculating days
         days = int((total_travel_time % 365) % 30)
 
-        # display total travel time
         print('The total travel time for all trips is {} '.format(str(total_travel_time)))
         print('This equates to {} years, {} months and {} days'.format(str(years), str(months), str(days)))
 
