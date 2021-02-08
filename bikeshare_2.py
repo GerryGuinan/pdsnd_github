@@ -1,3 +1,12 @@
+"""
+    Name: Gerry Guinan
+
+    File: bikeshare_2.py
+
+    Short description of program: Analysing Bikeshare data from 3 US Cities
+
+
+"""
 import time
 import pandas as pd
 import numpy as np
@@ -133,7 +142,6 @@ def load_data(city, month, day):
 
 
 def time_stats(df, month, day, filter):
-    """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
@@ -321,7 +329,9 @@ def record_scroll(df):
 
 def main():
 
-    #clear screen os call; sucsess depends on os type
+    # main function - loops until user no longer wants to review usage statistics from bikeshare data files
+
+    #clear screen os call; success depends on os type
     clear_screen()
 
     while True:
