@@ -132,13 +132,13 @@ def load_data(city, month, day):
     return df
 
 
-def time_stats(df, month, day, filter):
+def time_stats(df, month, day, data_filter):
     """Displays statistics on the most frequent times of travel."""
 
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
-    print('You are filtering on: {}'.format(filter))
+    print('You are filtering on: {}'.format(data_filter))
 
     """
     Code will check if there are filters.  If the filters are on, popular
@@ -212,17 +212,17 @@ def trip_duration_stats(df):
         total_travel_time = df['Trip Duration'].sum() / 60 / 60 /24
 
         # Calculating years - flat 365 days per year
-        years = int(total_travel_time // 365)
+        travel_years = int(total_travel_time // 365)
 
         # Calculating months - flat 30 days per month
-        months = int((total_travel_time % 365) // 30)
+        travel_months = int((total_travel_time % 365) // 30)
 
         # Calculating days
-        days = int((total_travel_time % 365) % 30)
+        travel_days = int((total_travel_time % 365) % 30)
 
         # display total travel time
         print('The total travel time for all trips is {} '.format(str(total_travel_time)))
-        print('This equates to {} years, {} months and {} days'.format(str(years), str(months), str(days)))
+        print('This equates to {} years, {} months and {} days'.format(str(travel_years), str(travel_months), str(travel_days)))
 
         # display mean travel time
         mean_travel_time = (df['Trip Duration'].mean()) / 60
