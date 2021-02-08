@@ -1,15 +1,17 @@
 ### Date created
-Include the date you created this project and README file.
+Project created date: 7th February 2021
+Last updated: 8th February 2021
 
 ### Project Title
-Replace the Project Title
+Git/Github Udacity Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+Allowing users to select one of the bikeshare files from major US cities and display various data relating to each file
 
 ### Files used
-Include the files used
+Bikeshare_2.py
+Various csv files - data files included in .gitignore
 
 ### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+https://www.w3docs.com/learn-git/gitignore.html
 
