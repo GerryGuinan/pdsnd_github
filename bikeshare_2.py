@@ -55,36 +55,43 @@ def get_filters():
 
     # get user input for month (all, january, february, march, april, may, june) and exception handler
     if data_filter == 'month' or data_filter == 'both':
-        separator = ", "
         months = ['january', 'february', 'march', 'april', 'may', 'june']
-        while month not in(months):
-            if month != '':
-                print('This is not a valid month selection. Please try again.')
-            try:
-                #use months list to build user input. any change to list will be reflected input
-                month = input('\nSelect month: {}? \n'.format(separator.join([iter.title() for iter in months]))).lower()
-            except Exception as e:
-                print('Invalid input....try again {}'.format(e))
+        month = filter_check(months,"month")
     else:
         month = 'all'
 
     # get user input for day of week (all, monday, tuesday, ... sunday)
     if data_filter == 'day' or data_filter == 'both':
-        separator = ", "
         days = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday','saturday']
-        while day not in(days):
-            if day != '':
-                print('This is not a valid day selection. Please try again.')
-            try:
-                #use months list to build user input; any change to list will be reflected input
-                day = input('\nSelect day: {}? \n'.format(separator.join([iter.title() for iter in days]))).lower()
-            except Exception as e:
-                print('Invalid input....try again {}'.format(e))
+        day = filter_check(days,"day")
     else:
         day = 'all'
 
     print('-'*40)
     return city, month, day, data_filter
+
+def filter_check(filter_list, filter_type):
+    
+    """
+    Takes a string input and a filter type as input.  Validates user input until the user inputs a value in the list
+
+    Function is generic in order to be used an input validation for multiple list types
+
+    """
+
+    separator = ", "
+    input_val = ''
+    
+    while input_val not in(filter_list):
+        if input_val != '':
+            print('This is not a valid {} selection. Please try again.'.format(filter_type))
+        try:
+            #use months list to build user input; any change to list will be reflected input
+            input_val = input('\nSelect day: {}? \n'.format(separator.join([iter.title() for iter in filter_list]))).lower()
+        except Exception as e:
+            print('Invalid input....try again {}'.format(e))
+    
+    return input_val
 
 
 def load_data(city, month, day):
@@ -310,6 +317,7 @@ def record_scroll(df):
     Iter variable initialised outside, count through records for option to break
 
     """
+
     iter = 0
     for index, row in df.iterrows():
         print('Row Index: {}'.format(index))
