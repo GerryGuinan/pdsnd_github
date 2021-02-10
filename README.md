@@ -10,6 +10,7 @@ Git/Github Udacity Bikeshare Project
 #### Introduction
 
 Allowing users to select one of the bikeshare files from major US cities and display various data relating to each file
+Second update: file updated during the initial commit.  Looks here who's an eager beaver :-)
 
 #### Overview
 
